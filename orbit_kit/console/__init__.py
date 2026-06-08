@@ -1,21 +1,65 @@
 """
-Orbit Console Utilities
+orbit_kit.console
+~~~~~~~~~~~~~~~~~
 
-Shared terminal and console helpers
-used throughout the Orbit ecosystem.
+Console output utilities used throughout the
+Orbit ecosystem.
 
-Exports:
-    success:
-        Display success messages.
+This package provides a centralized interface for
+displaying terminal output and user-facing messages.
 
-    error:
-        Display error messages.
+Orbit packages should prefer these utilities over
+direct interaction with rendering libraries to
+ensure a consistent developer experience.
 
-    warning:
-        Display warning messages.
+Examples
+--------
+Display a success message::
 
-    info:
-        Display informational messages.
+    from orbit_kit.console import (
+        success,
+    )
+
+    success(
+        "Project created successfully."
+    )
+
+Display an error message::
+
+    from orbit_kit.console import (
+        error,
+    )
+
+    error(
+        "Build failed."
+    )
+
+Display informational output::
+
+    from orbit_kit.console import (
+        info,
+    )
+
+    info(
+        "Installing dependencies..."
+    )
+
+Public API
+----------
+success
+    Display a success message.
+
+error
+    Display an error message.
+
+warning
+    Display a warning message.
+
+info
+    Display an informational message.
+
+plain
+    Display an unformatted message.
 """
 
 from .output import (
